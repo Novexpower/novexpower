@@ -30,7 +30,7 @@ export function Footer() {
                     {/* Brand Section */}
                     <div className="col-span-1 sm:col-span-2 lg:col-span-1">
                         <span className="flex items-center gap-3 mb-4">
-                            <Logo variant="light-bg" />
+                            <Logo />
                             <h3 className="manrope cursor-pointer text-xl font-bold text-gray-900 dark:text-white sm:text-2xl">
                                 {siteDetails.siteName}
                             </h3>
