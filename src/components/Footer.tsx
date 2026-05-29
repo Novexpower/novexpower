@@ -6,8 +6,7 @@ import dynamic from "next/dynamic";
 import { footerDetails, siteDetails } from "@/data";
 import { getPlatformIconByName } from "@/utils/getPlatformIcon";
 import { Logo } from "./logo";
-import { MdPhone } from "react-icons/md";
-import { EmailReveal } from ".";
+import { ContactReveal } from ".";
 
 const ContactModal = dynamic(
     () => import("./ContactModal").then((mod) => mod.ContactModal),
@@ -31,7 +30,7 @@ export function Footer() {
                     {/* Brand Section */}
                     <div className="col-span-1 sm:col-span-2 lg:col-span-1">
                         <span className="flex items-center gap-3 mb-4">
-                            <Logo variant="dark-bg" />
+                            <Logo variant="light-bg" />
                             <h3 className="manrope cursor-pointer text-xl font-bold text-gray-900 dark:text-white sm:text-2xl">
                                 {siteDetails.siteName}
                             </h3>
@@ -62,20 +61,11 @@ export function Footer() {
 
                         <div className="space-y-4">
                             {footerDetails.email && (
-                                <EmailReveal email={footerDetails.email} />
+                                <ContactReveal kind="email" value={footerDetails.email} />
                             )}
 
                             {footerDetails.telephone && (
-                                <a
-                                    href={`tel:${footerDetails.telephone}`}
-                                    className="flex items-center gap-2 break-all text-sm 
-                  text-gray-600 dark:text-gray-300 
-                  hover:text-blue-600 dark:hover:text-blue-400 
-                  transition"
-                                >
-                                    <MdPhone size={20} />
-                                    {footerDetails.telephone}
-                                </a>
+                                <ContactReveal kind="phone" value={footerDetails.telephone} />
                             )}
                         </div>
                     </div>

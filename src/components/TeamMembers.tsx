@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { team_members } from '@/data';
-import { EmailReveal } from '.';
+import { ContactReveal } from '.';
 
 export function Team() {
     return (
@@ -21,7 +21,7 @@ export function Team() {
                         <div>
                             <h3 className="text-lg font-semibold text-slate-950 dark:text-white">{member.name}</h3>
                             {member.email && (
-                                <EmailReveal email={member.email} />
+                                <ContactReveal kind="email" value={member.email} />
                             )}
                             <p className="text-sm text-sky-700 dark:text-sky-300">{member.role}</p>
                         </div>
