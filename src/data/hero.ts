@@ -1,5 +1,5 @@
 export const heroDetails = {
-  heading: "​​Design the Shape, We Power It.",
-  subheading: "Shaping the Future with Cutting-edge Battery Packs",
+  heading: "From Diesel to Electric. Powering Aviation from the Ground Up.",
+  subheading: "Shaping the Future with Cutting-edge Battery Packs to Power Aircraft.",
   centerImageSrc: "/images/hero-mockup.png",
 };
