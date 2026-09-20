@@ -13,9 +13,9 @@ export const faqs: IFAQ[] = [
       "We focus on meeting our customers’ specific needs, by delivering battery packs tailored to their unique design requirements, not just generic off-the-shelf solutions. Operating in the North European market, we offer short lead times and a highly responsive service. Our business is built from the ground up to be flexible and scalable, allowing us to adapt quickly and efficiently to varying customer demands. Thanks to our innovative production concept, we can ensure fast delivery, exceptional safety, and high performance, all while maintaining cost-effectiveness.",
   },
   {
-    question: `What makes ${siteDetails.siteName} battery pack unique?`,
+    question: `What makes the ${siteDetails.siteName} eGPU unique?`,
     answer:
-      "Our eGPUs are powered by advanced immersion-cooled battery technology, designed to deliver reliable, high-performance ground power in all weather conditions. Our innovative thermal management system keeps batteries cool during high-power charging and discharging, while also warming them in harsh winter conditions to maintain their optimal operating temperature.",
+      "Our eGPUs are powered by advanced immersion-cooled battery technology, designed to deliver reliable, high-performance ground power in all weather conditions. Our innovative thermal management system keeps batteries cool during high-power charging and discharging, while also warming them in harsh winter conditions to maintain their optimal operating temperature.      npm run dev",
   },
   {
     question: "Is immersion cooling safe and effective?",
