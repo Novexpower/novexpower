@@ -5,7 +5,7 @@ export const faqs: IFAQ[] = [
   {
     question: `What does ${siteDetails.siteName} do exactly?`,
     answer:
-      "We specialize in partnering with startups that need battery packs. We design and manufacture packs to meet their needs and accelerate their product development.",
+      "NovexPower develops advanced battery-powered electric ground power units (eGPUs) that replace diesel generators at airports. By combining innovative immersion-cooled battery technology with smart power solutions, we help airports reduce emissions, lower operating costs, and transition toward cleaner, more sustainable ground operations.",
   },
   {
     question: `Why ${siteDetails.siteName} ?`,
