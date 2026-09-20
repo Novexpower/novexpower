@@ -15,7 +15,7 @@ export const faqs: IFAQ[] = [
   {
     question: `What makes ${siteDetails.siteName} battery pack unique?`,
     answer:
-      "We build modular battery packs that fit any form or shape, ditching the generic boxy designs that dominate now. Our immersion-cooled architecture enables faster charging and discharging while acting as a built-in fire suppressant; if a cell fails, heat will not spread to its neighbors, boosting safety.",
+      "Our eGPUs are powered by advanced immersion-cooled battery technology, designed to deliver reliable, high-performance ground power in all weather conditions. Our innovative thermal management system keeps batteries cool during high-power charging and discharging, while also warming them in harsh winter conditions to maintain their optimal operating temperature.",
   },
   {
     question: "Is immersion cooling safe and effective?",
