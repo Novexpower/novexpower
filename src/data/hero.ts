@@ -1,5 +1,5 @@
 export const heroDetails = {
-  heading: "From Diesel to Electric. Powering Cleaner Aviation.",
+  heading: "Smarter Ground Power. Zero Emissions.",
   subheading: "Shaping the Future with Cutting-edge Battery Packs to Power Aircraft.",
   centerImageSrc: "/images/hero-mockup.png",
 };
