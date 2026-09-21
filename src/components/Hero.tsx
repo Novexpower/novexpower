@@ -47,13 +47,13 @@ export function Hero() {
                         width={1200}
                         height={800}
                         quality={75}
-                        sizes="(max-width: 420px) 82vw, (max-width: 640px) 78vw, (max-width: 768px) 72vw, (max-width: 1024px) 72vw, (max-width: 1536px) 62vw, 56vw"
+                        sizes="(max-width: 420px) 82vw, (max-width: 640px) 78vw, (max-width: 768px) 74vw, (max-width: 1024px) 76vw, (max-width: 1536px) 68vw, 60vw"
                         priority={true}
                         unoptimized={false}
                         alt="Hero image"
                         draggable={false}
                         style={{ userSelect: 'none', WebkitUserSelect: 'none', MozUserSelect: 'none' }}
-                        className="mx-auto -translate-x-8 sm:-translate-x-10 z-10 w-full max-w-[15rem] sm:max-w-[23rem] md:max-w-[33rem] lg:max-w-[43rem] xl:max-w-[49rem] 2xl:max-w-[55rem] h-auto select-none rounded-lg sm:rounded-xl object-cover"
+                        className="mx-auto translate-x-3 sm:translate-x-5 z-10 w-full max-w-[17rem] sm:max-w-[26rem] md:max-w-[36rem] lg:max-w-[47rem] xl:max-w-[53rem] 2xl:max-w-[60rem] h-auto select-none rounded-lg sm:rounded-xl object-cover"
                     />
                 </div>
             </div>
