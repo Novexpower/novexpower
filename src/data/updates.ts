@@ -1,5 +1,11 @@
 export const updates = [
-  
+
+    {
+    name: "NovexPower Joins The Pioneer Program By KTH Ventures",
+    date: "8.11.26",
+    location: "Stockholm, Sweden",
+    image: "/images/Pioneer.png",
+  },
   {
     name: "NovexPower at NORDEEP 5th Anniversary Edition",
     date: "(16-17).10.26",
@@ -7,7 +13,7 @@ export const updates = [
     image: "/images/NordeepEvent5.png",
   },
   {
-    name: "NovexPower is awarded the VFT funding",
+    name: "NovexPower Is Awarded The VFT Funding From VINNOVA",
     date: "15.10.26",
     location: "Stockholm, Sweden",
     image: "/images/VFTFunding.png",
