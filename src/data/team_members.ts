@@ -6,7 +6,7 @@ export const team_members: Iteam_members[] = [
     email: "yaman@novexpower.com",
     role: "Mechatronics & Design",
 
-    message: `M.Sc. Engineering Design, Mechatronicsn.\nExpert in robotics, system integration, manufacturing automation.`,
+    message: `M.Sc. Mechatronic Engineering.\nExpert in battery hardware and software, system integration and manufacturing automation.`,
     avatar: "/images/Yaman.png",
   },
   {

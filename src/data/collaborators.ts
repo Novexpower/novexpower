@@ -6,7 +6,12 @@ export const collaborators = [
   },
   {
     name: "KTH",
-    url: "https://kth.se/",
+    url: "https://www.kth.se/om/innovation",
     logo: "/logos/kth.webp",
+  },
+  {
+    name: "Swedavia",
+    url: "https://www.swedavia.se/",
+    logo: "/images/SwedaviaPartners.png",
   },
 ];

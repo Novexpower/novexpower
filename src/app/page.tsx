@@ -34,7 +34,7 @@ export default function HomePage() {
         </Section>
         <Section
           id="events"
-          title="Events"
+          title="Updates"
           description="Our recent and upcoming events."
         >
           <Events />

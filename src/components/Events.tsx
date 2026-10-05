@@ -1,11 +1,11 @@
-import { events } from '@/data';
+import { updates } from '@/data';
 import Image from 'next/image';
 import React from 'react';
 
 export function Events() {
     return (
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-            {events.map((event) => (
+            {updates.map((event) => (
                 <article
                     key={event.name}
                     className="group block h-full transform transition duration-300 hover:-translate-y-1"

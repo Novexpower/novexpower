@@ -15,7 +15,7 @@ export const menuItems: IMenuItem[] = [
     url: "#team",
   },
   {
-    text: "Events",
+    text: "Updates",
     url: "#events",
   },
 ];

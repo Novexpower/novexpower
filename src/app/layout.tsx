@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Source_Sans_3, Manrope } from "next/font/google";
+import localFont from "next/font/local";
 import { AnalyticsConsentScript, CookieBanner, Footer, Header } from "@/components";
 import { siteDetails } from '@/data';
 import { Providers } from "./provider";
@@ -7,8 +7,18 @@ import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/next"
 
 
-const manrope = Manrope({ subsets: ['latin'] });
-const sourceSans = Source_Sans_3({ subsets: ['latin'] });
+const manrope = localFont({
+  src: "./fonts/manrope-latin-variable.woff2",
+  weight: "200 800",
+  variable: "--font-manrope",
+  display: "swap",
+});
+const sourceSans = localFont({
+  src: "./fonts/source-sans-3-latin-variable.woff2",
+  weight: "200 900",
+  variable: "--font-source-sans-3",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteDetails.siteUrl || 'https://novexpower.com'),
@@ -43,7 +53,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${manrope.className} ${sourceSans.className} antialiased`}>
+      <body className={`${manrope.variable} ${sourceSans.variable} antialiased`}>
         <AnalyticsConsentScript analyticsId={siteDetails.googleAnalyticsId || ""} />
         <Analytics />
         <Providers>

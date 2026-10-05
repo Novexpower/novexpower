@@ -1,5 +1,5 @@
 export * from "./collaborators";
-export * from "./events";
+export * from "./updates";
 export * from "./faq";
 export * from "./menuItems";
 export * from "./siteDetails";

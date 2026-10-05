@@ -31,7 +31,7 @@ body {
 
   color: var(--foreground);
   background: var(--background);
-  font-family: "Source Sans 3", sans-serif;
+  font-family: var(--font-source-sans-3), sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
@@ -43,7 +43,7 @@ body {
 }
 
 .manrope {
-  font-family: "Manrope", sans-serif;
+  font-family: var(--font-manrope), sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
@@ -54,7 +54,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Manrope", sans-serif;
+  font-family: var(--font-manrope), sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
