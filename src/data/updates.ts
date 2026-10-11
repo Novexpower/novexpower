@@ -25,13 +25,13 @@ export const updates = [
     image: "/images/Team.webp",
   },
     {
-    name: "NovexPower at Beers & Batts, The Swedish Battery Reboot",
+    name: "NovexPower Co-hosting Beers & Batts, The Swedish Battery Reboot",
     date: "25.11.25",
     location: "Stockholm, Sweden",
     image: "/images/battery-reboot-1.jpeg",
   },
   {
-    name: "NovexPower: Exhibitors, Speakers & Contributors",
+    name: "NovexPower as Speaker & Contributor at Beers & Batts",
     date: "25.11.25",
     location: "Stockholm, Sweden",
     image: "/images/battery-reboot-2.jpeg",
