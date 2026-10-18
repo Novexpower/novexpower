@@ -1,16 +1,17 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import { Transition } from '@headlessui/react';
-import { menuItems } from '@/data';
+import type {IMenuItem} from './types';
 
 interface MenuProps {
     isOpen: boolean;
     toggleMenu: () => void;
     activeSection: string;
     setActiveSection: (section: string) => void;
+    menuItems: IMenuItem[];
 }
 
-export function Menu({ isOpen, toggleMenu, activeSection, setActiveSection }: MenuProps) {
+export function Menu({ isOpen, toggleMenu, activeSection, setActiveSection, menuItems }: MenuProps) {
     const [hoveredItem, setHoveredItem] = useState<string | null>(null);
 
     const navigateToSection = (url: string) => {

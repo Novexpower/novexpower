@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { AnalyticsConsentScript, CookieBanner, Footer, Header } from "@/components";
-import { siteDetails } from '@/data';
+import { getSanityContent } from '@/sanity/content';
 import { Providers } from "./provider";
 import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/next"
@@ -20,46 +20,52 @@ const sourceSans = localFont({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteDetails.siteUrl || 'https://novexpower.com'),
-  title: siteDetails.metadata.title,
-  description: siteDetails.metadata.description,
+export async function generateMetadata(): Promise<Metadata> {
+  const {site} = await getSanityContent();
+
+  return {
+  metadataBase: new URL(site.siteUrl || 'https://novexpower.com'),
+  title: site.metadata.title,
+  description: site.metadata.description,
   openGraph: {
-    title: siteDetails.metadata.title,
-    description: siteDetails.metadata.description,
-    url: siteDetails.siteUrl,
+    title: site.metadata.title,
+    description: site.metadata.description,
+    url: site.siteUrl,
     type: 'website',
     images: [
       {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 675,
-        alt: siteDetails.siteName,
+        alt: site.siteName,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: siteDetails.metadata.title,
-    description: siteDetails.metadata.description,
+    title: site.metadata.title,
+    description: site.metadata.description,
     images: ['/images/twitter-image.jpg'],
   },
-};
+  };
+}
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const {site, footer, navigation} = await getSanityContent();
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${manrope.variable} ${sourceSans.variable} antialiased`}>
-        <AnalyticsConsentScript analyticsId={siteDetails.googleAnalyticsId || ""} />
+        <AnalyticsConsentScript analyticsId={site.googleAnalyticsId || ""} />
         <Analytics />
         <Providers>
-          <Header />
+          <Header siteName={site.siteName} navigation={navigation} />
           <main>{children}</main>
-          <Footer />
+          <Footer footer={footer} siteName={site.siteName} />
           <CookieBanner />
         </Providers>
       </body>

@@ -2,9 +2,10 @@
 import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
 import { BiMinus, BiPlus } from "react-icons/bi";
 import SectionTitle from "./SectionTitle";
-import { faqs } from "@/data";
 
-export function FAQ() {
+type FAQItem = {question: string; answer: string}
+
+export function FAQ({faqs}: {faqs: FAQItem[]}) {
     return (
         <section id="faq" className="relative overflow-hidden py-10 sm:py-14 lg:py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

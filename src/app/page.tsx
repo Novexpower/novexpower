@@ -1,10 +1,13 @@
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import { Collaboration, Events, LineSep, Team, FAQ, Hero } from "@/components";
+import { getSanityContent } from "@/sanity/content";
 
 
 
-export default function HomePage() {
+export default async function HomePage() {
+  const content = await getSanityContent();
+
   return (
     <>
       <Section
@@ -12,7 +15,7 @@ export default function HomePage() {
         title=""
         description=""
       >
-        <Hero />
+        <Hero hero={content.hero} />
         <LineSep />
       </Section>
       <Container>
@@ -21,7 +24,7 @@ export default function HomePage() {
           title="Collaborations"
           description="We are proud to collaborate with these amazing teams and organizations."
         >
-          <Collaboration />
+          <Collaboration collaborators={content.collaborators} />
           <LineSep />
         </Section>
         <Section
@@ -29,7 +32,7 @@ export default function HomePage() {
           title="Our Team"
           description="A glimpse of our team roles and backgrounds."
         >
-          <Team />
+          <Team teamMembers={content.teamMembers} />
           <LineSep />
         </Section>
         <Section
@@ -37,10 +40,10 @@ export default function HomePage() {
           title="Updates"
           description="Our recent and upcoming events."
         >
-          <Events />
+          <Events events={content.events} />
           <LineSep />
         </Section>
-        <FAQ />
+        <FAQ faqs={content.faqs} />
       </Container>
     </>
   );
