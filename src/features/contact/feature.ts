@@ -1,9 +1,11 @@
-import { createService } from "./service";
+import "server-only";
 
-export function createContact() {
-  const service = createService();
 
-  return {
-    service,
-  };
-}
+import { ResendContactEmailSender } from "./infrastructure/ResendContactEmailSender";
+import { ContactService } from "./service";
+
+const emailSender = new ResendContactEmailSender();
+
+export const contact = {
+  service: new ContactService(emailSender),
+};

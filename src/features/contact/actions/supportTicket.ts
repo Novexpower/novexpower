@@ -1,6 +1,8 @@
 "use server";
 
-import { contact } from "../instance";
+import { contact } from "../feature";
+
+
 
 export async function sendTicket(prevState: any, payload: FormData) {
   const name = ((payload.get("name") as string) || "").trim();
