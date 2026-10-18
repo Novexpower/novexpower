@@ -3,14 +3,16 @@ export type Ticket = {
   email: string;
   message: string;
 };
-
-export type SERVICE_METHODS = {
-  create: (ticket: Ticket) => Promise<{
+export type ContactResponse = {
     success: boolean;
     message: string;
     errors?: ERRORS;
-  }>;
+  }
+export type IContactService = {
+  createTicket: (ticket: Ticket) => Promise<ContactResponse>;
 };
+
+
 
 export type ERRORS = {
   name?: string;
