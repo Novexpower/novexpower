@@ -1,7 +1,14 @@
 import Image from 'next/image';
 import { heroDetails } from '@/data';
+import type {SanityHero} from '@/sanity/hero';
 
-export function Hero() {
+export function Hero({hero}: {hero?: SanityHero | null}) {
+    const details = {
+        heading: hero?.heading || heroDetails.heading,
+        subheading: hero?.subheading || heroDetails.subheading,
+        centerImageSrc: hero?.centerImageSrc || heroDetails.centerImageSrc,
+    };
+
     return (
         <section className="relative w-full overflow-hidden">
             {/* LEFT GRID */}
@@ -35,15 +42,15 @@ export function Hero() {
                 <div className="relative w-full flex flex-col items-center justify-center gap-6 sm:gap-8 md:gap-10">
                     <div className="text-center">
                         <h1 className="whitespace-normal text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold text-foreground mx-auto hero-title leading-[1.08] max-w-[90%] sm:max-w-[85%] md:max-w-4xl">
-                            {heroDetails.heading}
+                            {details.heading}
                         </h1>
                         <p className="mt-1.5 sm:mt-2.5 text-foreground max-w-[92%] sm:max-w-[82%] md:max-w-2xl mx-auto text-xs sm:text-sm md:text-base lg:text-lg">
-                            {heroDetails.subheading}
+                            {details.subheading}
                         </p>
                     </div>
 
                     <Image
-                        src={heroDetails.centerImageSrc}
+                        src={details.centerImageSrc}
                         width={1200}
                         height={800}
                         quality={75}

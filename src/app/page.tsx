@@ -1,10 +1,13 @@
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import { Collaboration, Events, LineSep, Team, FAQ, Hero } from "@/components";
+import { getHero } from "@/sanity/hero";
 
 
 
-export default function HomePage() {
+export default async function HomePage() {
+  const hero = await getHero();
+
   return (
     <>
       <Section
@@ -12,7 +15,7 @@ export default function HomePage() {
         title=""
         description=""
       >
-        <Hero />
+        <Hero hero={hero} />
         <LineSep />
       </Section>
       <Container>
