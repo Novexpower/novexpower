@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import { footerDetails, siteDetails } from "@/data";
+import type {ISocials} from './types';
 import { getPlatformIconByName } from "@/utils/getPlatformIcon";
 import { Logo } from "./logo";
 import { ContactReveal } from ".";
@@ -13,7 +13,14 @@ const ContactModal = dynamic(
     { ssr: false }
 );
 
-export function Footer() {
+type FooterDetails = {
+    subheading?: string;
+    email?: string;
+    telephone?: string;
+    socials?: ISocials;
+};
+
+export function Footer({footer, siteName}: {footer: FooterDetails; siteName: string}) {
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
@@ -32,12 +39,12 @@ export function Footer() {
                         <span className="flex items-center gap-3 mb-4">
                             <Logo />
                             <h3 className="manrope cursor-pointer text-xl font-bold text-gray-900 dark:text-white sm:text-2xl">
-                                {siteDetails.siteName}
+                                {siteName}
                             </h3>
                         </span>
 
                         <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
-                            {footerDetails.subheading}
+                            {footer.subheading}
                         </p>
 
                         <button
@@ -60,12 +67,12 @@ export function Footer() {
                         </h4>
 
                         <div className="space-y-4">
-                            {footerDetails.email && (
-                                <ContactReveal kind="email" value={footerDetails.email} />
+                            {footer.email && (
+                                <ContactReveal kind="email" value={footer.email} />
                             )}
 
-                            {footerDetails.telephone && (
-                                <ContactReveal kind="phone" value={footerDetails.telephone} />
+                            {footer.telephone && (
+                                <ContactReveal kind="phone" value={footer.telephone} />
                             )}
                         </div>
                     </div>
@@ -77,13 +84,13 @@ export function Footer() {
                         </h4>
 
                         <div className="flex items-center gap-4 flex-wrap">
-                            {footerDetails.socials &&
-                                Object.keys(footerDetails.socials).map((platformName) => {
-                                    if (!footerDetails.socials[platformName]) return null;
+                            {footer.socials &&
+                                Object.keys(footer.socials).map((platformName) => {
+                                    if (!footer.socials?.[platformName]) return null;
 
                                     return (
                                         <Link
-                                            href={footerDetails.socials[platformName]}
+                                            href={footer.socials[platformName] || '#'}
                                             key={platformName}
                                             aria-label={platformName}
                                             className="text-gray-500 dark:text-gray-300 
@@ -109,7 +116,7 @@ export function Footer() {
                         <p className="text-center sm:text-left text-gray-500 dark:text-gray-400 max-w-md">
                             © {new Date().getFullYear()}
                             <span className="font-semibold text-gray-900 dark:text-white ml-1">
-                                {siteDetails.siteName} AB
+                                {siteName} AB
                             </span>
                             . All rights reserved.
                         </p>

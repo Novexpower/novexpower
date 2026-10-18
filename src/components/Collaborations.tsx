@@ -1,8 +1,8 @@
-import { collaborators } from '@/data';
 import Image from 'next/image';
 
+type Collaborator = {name: string; url?: string; logo: string}
 
-export function Collaboration() {
+export function Collaboration({collaborators}: {collaborators: Collaborator[]}) {
     return (
         <div className="flex flex-wrap justify-center items-center gap-x-20 gap-y-5">
             {collaborators && collaborators.map((collab) => (

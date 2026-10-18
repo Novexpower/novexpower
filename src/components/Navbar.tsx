@@ -1,23 +1,23 @@
 'use client';
 
 import { ThemeToggler, Logo } from '.';
-import { siteDetails } from '@/data';
 import { HiBars3, HiOutlineXMark } from 'react-icons/hi2';
 
 type NavbarProps = {
     toggleMenu: () => void;
     isOpen: boolean;
     showSectionMenu: boolean;
+    siteName: string;
 }
 
-export function Navbar({ toggleMenu, isOpen, showSectionMenu }: NavbarProps) {
+export function Navbar({ toggleMenu, isOpen, showSectionMenu, siteName }: NavbarProps) {
     return (
         <nav className="mx-auto flex items-center justify-between bg-white px-3 py-2 shadow-md dark:bg-[--background] sm:px-4 md:bg-transparent md:px-5 md:py-8 md:shadow-none">
             {/* Logo */}
             <span className="flex min-w-0 items-center">
                 <Logo />
                 <span className="manrope ml-2 truncate bg-gradient-to-b text-base font-semibold text-foreground backdrop-blur-[2px] sm:text-lg md:text-xl">
-                    {siteDetails.siteName}
+                    {siteName}
                 </span>
             </span>
             <span className="hidden md:flex">
